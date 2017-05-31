@@ -27,8 +27,8 @@
 
         <div class="nav-user">
             <!-- 未登入状态 -->
-            <a class="unlogin" href="user/login.html"><i class="iconfont icon-touxiang"></i></a>
-            <span><a href="user/login.html">登入</a><a href="user/reg.html">注册</a></span>
+            <a class="unlogin" href="login.ftl"><i class="iconfont icon-touxiang"></i></a>
+            <span><a href="login.ftl">登入</a><a href="reg.ftl">注册</a></span>
             <p class="out-login">
                 <a href="" onclick="layer.msg('正在通过QQ登入', {icon:16, shade: 0.1, time:0})" class="iconfont icon-qq" title="QQ登入"></a>
                 <a href="" onclick="layer.msg('正在通过微博登入', {icon:16, shade: 0.1, time:0})" class="iconfont icon-weibo" title="微博登入"></a>
@@ -92,7 +92,7 @@
                 </li>
                 <li class="fly-list-li">
                     <a href="user/home.html" class="fly-list-avatar">
-                        <img src="/img/00.jpg" alt="">
+                        <img src="img/00.jpg" alt="">
                     </a>
                     <h2 class="fly-tip">
                         <a href="jie/detail.html">基于 layui的轻量级问答社区页面模版 V2版本</a>
@@ -573,7 +573,7 @@
     layui.cache.user = {
         username: '游客'
         ,uid: -1
-        ,avatar: '/00.jpg'
+        ,avatar: 'img/00.jpg'
         ,experience: 83
         ,sex: '男'
     };
