@@ -5,6 +5,7 @@ import com.huan.bean.User;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 
@@ -18,36 +19,31 @@ public class UserController {
 @Resource
     private UserService userService;
 
-    @RequestMapping("/login")
-    public String login(){
+    @RequestMapping(value="/user/login", method= RequestMethod.GET)
+    public String login(HttpServletRequest request,User user){
         System.out.println("进来登录");
-        return "login";
+        return "user/login";
+
+
     }
 
 
-    @RequestMapping("/index")
+    @RequestMapping(value="/index", method= RequestMethod.GET)
     public String index(){
         System.out.println("进来index");
         return "index";
     }
 
-    @RequestMapping("/reg")
+    @RequestMapping(value="/user/reg", method= RequestMethod.GET)
     public String register(){
-
         System.out.println("进来注册");
-        return "reg";
+        return "user/reg";
     }
 
 
     @RequestMapping("/register")
     public String register(HttpServletRequest request){
         System.out.print("户数地区湖区");
-        User user=new User();
-        String username=request.getParameter("username");
-        String pwd=request.getParameter("password");
-        user.setPassword(pwd);
-        user.setUsername(username);
-        userService.save(user);
         return "login";
     }
 }
